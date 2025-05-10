@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="STRIVE: Structured Representation Integrating VLM Reasoning for Efficient Object Navigation">
+    content="STRIVE: Structured Representation Integrating VLM Reasoning for Efficient Object Navigation">
   <meta name="keywords" content="Robot Object Navigation, Vision-Language Models, Reasoning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STRIVE</title>
@@ -22,15 +23,13 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -40,9 +39,10 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -83,62 +83,63 @@
 </nav> -->
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">STRIVE: Structured Representation Integrating VLM Reasoning for Efficient Object Navigation</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://zwandering.github.io/">Haokun Zhu</a><sup>1 *</sup>,</span>
-            <span class="author-block">
-              <a href="https://github.com/igzat1no">Zongtai Li</a><sup>1 *</sup>,</span>
-            <span class="author-block">
-              <a href="https://ariannaliu.github.io/">Zhixuan Liu</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.wangwenshan.com/">Wenshan Wang</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://frc.ri.cmu.edu/~zhangji/">Ji Zhang</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://jonfranc.com/">Jonathan Francis</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.cs.cmu.edu/~jeanoh/">Jean Oh</a><sup>1</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Carnegie Mellon University,</span>
-            <span class="author-block"><sup>2</sup>Bosch Center for AI</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://zwandering.github.io/STRIVE.github.io/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+            <h1 class="title is-2 publication-title">STRIVE: Structured Representation Integrating VLM Reasoning for
+              Efficient Object Navigation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://zwandering.github.io/">Haokun Zhu</a><sup>1 *</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/igzat1no">Zongtai Li</a><sup>1 *</sup>,</span>
+              <span class="author-block">
+                <a href="https://ariannaliu.github.io/">Zhixuan Liu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://www.wangwenshan.com/">Wenshan Wang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://frc.ri.cmu.edu/~zhangji/">Ji Zhang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://jonfranc.com/">Jonathan Francis</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.cs.cmu.edu/~jeanoh/">Jean Oh</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Carnegie Mellon University,</span>
+              <span class="author-block"><sup>2</sup>Bosch Center for AI</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://zwandering.github.io/STRIVE.github.io/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://zwandering.github.io/STRIVE.github.io/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://zwandering.github.io/STRIVE.github.io/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -147,18 +148,18 @@
                   <span>Video</span>
                 </a>
               </span> -->
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://zwandering.github.io/STRIVE.github.io/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://zwandering.github.io/STRIVE.github.io/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code (Coming Soon)</span>
+                    </span>
+                    <span>Code (Coming Soon)</span>
                   </a>
-              </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
+                </span>
+                <!-- Dataset Link. -->
+                <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -167,32 +168,46 @@
                   <span>Data</span>
                   </a>
               </span> -->
+              </div>
+
             </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section class="section" id="paper-video">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Video</h2>
-          <div class="publication-video">
-            <video controls width="100%">
-              <source src="./static/videos/video_0.84.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- <section class="section">
+  <!-- <section class="section" id="paper-video">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video controls width="100%">
+            <source src="./static/videos/video_0.84.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+  <section class="section" id="paper-video">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/Oa9xfcYeVnA?si=N3yYDv0ZX-d9bBrL" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths has-text-centered">
@@ -205,7 +220,7 @@
   </div>
 </section> -->
 
-<!-- <section class="hero teaser">
+  <!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -224,29 +239,31 @@
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p></p>
-          We propose a novel framework that constructs a multi-layer representation of the environment during navigation. 
-          This representation consists of viewpoint, object nodes, and room nodes. 
-          Viewpoints and object nodes facilitate intra-room exploration and accurate target localization, while room nodes support
-          efficient inter-room planning. Building on this representation, we propose a novel
-          two-stage navigation policy, integrating high-level planning guided by VLM rea-
-          soning with low-level VLM-assisted exploration to efficiently locate a goal object.
-          </p>
-          <p>
-          We evaluated our approach on three simulated benchmarks (HM3D, RoboTHOR,
-          and MP3D), and achieved state-of-the-art performance on both the success rate
-          (↑ 7.1%) and navigation efficiency (↑ 12.5%). We further validate our method on
-          a real robot platform, demonstrating strong robustness across 15 object navigation
-          tasks in 10 different indoor environments.
-          </p>
-          <!-- <p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p></p>
+            We propose a novel framework that constructs a multi-layer representation of the environment during
+            navigation.
+            This representation consists of viewpoint, object nodes, and room nodes.
+            Viewpoints and object nodes facilitate intra-room exploration and accurate target localization, while room
+            nodes support
+            efficient inter-room planning. Building on this representation, we propose a novel
+            two-stage navigation policy, integrating high-level planning guided by VLM rea-
+            soning with low-level VLM-assisted exploration to efficiently locate a goal object.
+            </p>
+            <p>
+              We evaluated our approach on three simulated benchmarks (HM3D, RoboTHOR,
+              and MP3D), and achieved state-of-the-art performance on both the success rate
+              (↑ 7.1%) and navigation efficiency (↑ 12.5%). We further validate our method on
+              a real robot platform, demonstrating strong robustness across 15 object navigation
+              tasks in 10 different indoor environments.
+            </p>
+            <!-- <p>
             We present the first method capable of photorealistically reconstructing a non-rigidly
             deforming scene using photos/videos captured casually from mobile phones.
           </p>
@@ -273,31 +290,31 @@
             reconstructs non-rigidly deforming scenes and reproduces unseen views with high
             fidelity.
           </p> -->
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <figure class="image">
+            <img src="./static/images/pipeline_4.png" alt="Sample Image" style="width: 100%; height: auto;">
+          </figure>
+          <p class="is-size-5"><strong>Overview of STRIVE.</strong></p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <figure class="image">
-          <img src="./static/images/pipeline_4.png" alt="Sample Image" style="width: 100%; height: auto;">
-        </figure>
-        <p class="is-size-5"><strong>Overview of STRIVE.</strong></p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
-<!-- <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -310,15 +327,16 @@
 </section> -->
 
 
-<footer class="footer">
-  <div class="columns is-centered">
-    <div class="column is-8 has-text-centered">
-      <div class="content">
-        Website template based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+  <footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          Website template based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
