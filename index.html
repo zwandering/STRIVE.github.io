@@ -40,6 +40,60 @@
   <script src="./static/js/index.js"></script>
 </head>
 
+<style>
+  .video-container {
+    width: 30%;
+    /* 每个容器宽度为页面宽度的32%，根据实际情况调整 */
+    display: inline-block;
+    /* 使容器并列排列 */
+    margin: 1%;
+    /* 添加外边距 */
+    vertical-align: top;
+  }
+
+  video {
+    width: 90%;
+    /* 视频宽度填满容器 */
+    display: inline-block;
+    /* 确保视频占满整个容器宽度 */
+    margin: 0 auto;
+    /* 视频居中 */
+  }
+
+  .description {
+    text-align: center;
+    /* 文字居中对齐 */
+  }
+
+  .scale-image {
+    width: 80%;
+    /* 设定特定图片的宽度 */
+    height: auto;
+    /* 保持宽高比 */
+    transition: transform 0.3s ease;
+    /* 添加动画过渡效果 */
+  }
+
+  .text-image-container {
+    display: flex;
+    /* 使用弹性盒模型布局 */
+    align-items: flex-start;
+    /* 上端对齐 */
+    justify-content: center;
+  }
+
+  ul {
+    text-align: justify;
+    /* 确保文本左对齐 */
+    list-style-position: inside;
+    /* 列表标记与文本对齐 */
+    font-size: 16px;
+    list-style-type: circle;
+    /* 使用圆形作为项目符号 */
+
+  }
+</style>
+
 <body>
 
   <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -193,12 +247,41 @@
   </div>
 </section> -->
 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <div class="text-image-container title is-3"
+              style="display: flex; align-items: center; justify-content: center;">
+              <img src="static/images/light-bulb.png" alt="示例图片" width="45" style="margin-right: 10px;">
+              <p style="margin: 0;">Contributions</p>
+            </div>
+            <ul>
+              <li style="text-align: left; margin-bottom: 15px;"><b>We propose a framework that incrementally builds a
+                  structured representation of the environment, enabling the VLM to make
+                  more informed decisions.</b></li>
+              <li style="text-align: left; margin-bottom: 15px;"><b>We design an efficient two-stage navigation policy
+                  based on this representation, combining high-level planning guided by the VLM's reasoning and
+                  low-level exploration with VLM's assistance.</b></li>
+              <li style="text-align: left; margin-bottom: 0px;"><b>STRIVE achieves state-of-the-art performance on simulated
+                  benchmarks (HM3D, RoboTHOR, MP3D) and shows strong performance in
+                  diverse and complex real-world environments. </b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   <section class="section" id="paper-video">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full">
           <h2 class="title is-3">Video</h2>
-          <div class="publication-video">
+          <div class="publication-video" style="width: 90%; margin: 0 auto;">
             <iframe src="https://www.youtube.com/embed/Oa9xfcYeVnA?si=N3yYDv0ZX-d9bBrL" frameborder="0"
               allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
@@ -206,6 +289,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- <section class="section">
   <div class="container is-max-desktop">
@@ -302,16 +386,284 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
-        <div class="column is-four-fifths has-text-centered">
+        <div class="column is-four-fifths-desktop has-text-centered">
+          <h2 class="title is-3">Method Overview</h2>
           <figure class="image">
             <img src="./static/images/pipeline_4.png" alt="Sample Image" style="width: 100%; height: auto;">
           </figure>
-          <p class="is-size-5"><strong>Overview of STRIVE.</strong></p>
+            <p class="is-size-6" style="text-align: left;"><strong>Overview of STRIVE.</strong> We construct a multi-layer representation R on-the-fly, consisting of object, viewpoint, and room nodes, which serves as a structured input for VLM. Based on R, we introduce a two-stage navigation policy, where the VLM reasons and plans at room-level, while the agent explores in room at the viewpoint-level using a VLM-assisted frontier-based navigation strategy and VLM-based target verification.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths-desktop has-text-centered">
+          <h2 class="title is-3">Benchmark Results</h2>
+          <figure class="image">
+            <img src="./static/images/table1.png" alt="Sample Image" style="width: 100%; height: auto;">
+          </figure>
+          <p class="is-size-6" style="text-align: left;"><strong>Comparison with SOTA methods with different settings on HM3D, RoboTHOR, and MP3D
+          datasets.</strong> We report the Success Rate (SR) and Success weighted by Path Length (SPL) metrics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths-desktop has-text-centered">
+          <h2 class="title is-3">Benchmark Results</h2>
+          <figure class="image">
+            <img src="./static/images/qualatative_00.png" alt="Sample Image" style="width: 100%; height: auto;">
+          </figure>
+          <p class="is-size-6" style="text-align: left;"><strong>Qualitative visualization of STRIVE.</strong> The first and second steps show the VLM’s reasoning process, where it selects Room
+              6 and 9 by jointly considering room-layout ('doorway'),
+              semantic cues ('nightstand') and travel cost (penalized distance). The final step shows VLM-based
+              verification, using contextual cues (e.g., mattress, pillows) to confirm the target object as a ‘bed’.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Real-world Experiments</h2>
+        <div id="results-carousel-teaser1" class="carousel results-carousel">
+
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/real_world/real_world_hard_robo_table_ori.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/real_world/real_world_hard_cic_ref_ori.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video18">
+            <video poster="" id="video18" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/real_world/real_world_hard_robo_ref_ori.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Experiments on HM3D</h2>
+        <div id="results-carousel-teaser1" class="carousel results-carousel">
+  
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-0.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-11.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-12.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-13.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-14.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-15.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-16.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-31.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/hm3d/episode-32.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Experiments on RoboTHOR</h2>
+        <div id="results-carousel-teaser1" class="carousel results-carousel">
+  
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-6.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-10.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-12.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-13.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video17">
+            <video poster="" id="video17" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/robothor/episode-14.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Experiments on MP3D</h2>
+        <div id="results-carousel-teaser1" class="carousel results-carousel">
+  
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-12.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-23.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-27.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-29.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-36.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-37.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-39.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-49.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-55.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video">
+            <video poster="" id="video16" autoplay playsinline controls muted height="100%">
+              <source src="./static/videos/mp3d/episode-64.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
 
   <!-- <section class="section" id="BibTeX">
